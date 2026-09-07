@@ -38,9 +38,28 @@
         }
         .subtitulo {
             color: #6c757d;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-size: 1.1em;
             font-weight: 500;
+        }
+        /* Estilo do Vídeo Institucional */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
         .link-box {
             margin: 15px 0;
@@ -93,7 +112,7 @@
             color: #0056b3;
         }
 
-        /* Estilos da Modal de Conteúdo de Estudo */
+        /* Estilos da Modal e Lições */
         .modal {
             display: none;
             position: fixed;
@@ -111,7 +130,7 @@
         .modal-content {
             background-color: #fff;
             width: 100%;
-            max-width: 700px;
+            max-width: 650px;
             max-height: 85vh;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -130,7 +149,7 @@
         }
         .modal-header h2 {
             margin: 0;
-            font-size: 1.4em;
+            font-size: 1.3em;
         }
         .close-btn {
             background: none;
@@ -146,24 +165,44 @@
             line-height: 1.6;
             color: #333;
         }
-        .modal-body h3 {
+        /* Lista de Lições em estilo de botões accordions/linhas */
+        .licao-item {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+        .licao-titulo {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 15px 20px;
+            text-align: left;
+            font-size: 1.05em;
+            font-weight: 600;
             color: #0056b3;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
         }
-        .modal-body h3:first-child {
-            margin-top: 0;
+        .licao-titulo:hover {
+            background-color: #e2e8f0;
         }
-        .modal-body p, .modal-body li {
-            font-size: 0.98em;
-            margin-bottom: 10px;
+        .licao-conteudo {
+            display: none;
+            padding: 0 20px 20px 20px;
+            color: #4a5568;
+            font-size: 0.95em;
+            border-top: 1px solid #e9ecef;
+            background: #fff;
         }
-        .modal-body ul {
-            padding-left: 20px;
-            margin-top: 5px;
+        .licao-conteudo p {
+            margin-top: 15px;
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -173,6 +212,11 @@
     <div class="header-content">
         <h1>Prime Cursos</h1>
         <div class="subtitulo">Capacitação Online - Curso de Vendas</div>
+    </div>
+
+    <!-- Vídeo Institucional incorporado -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/V4N_94I4cjY" title="Apresentação do Curso de Vendas" allowfullscreen></iframe>
     </div>
 
     <div class="link-box">
@@ -193,46 +237,199 @@
     </div>
 </div>
 
-<!-- Modal com o Material de Estudo Organizado por Tópicos -->
+<!-- Modal com as 23 Lições do Curso -->
 <div id="modalEstudo" class="modal">
     <div class="modal-content">
         <div class="modal-header">
-            <h2>Material de Estudo - Curso de Vendas</h2>
+            <h2>Conteúdo Programático - Curso de Vendas</h2>
             <button class="close-btn" onclick="fecharModal()">&times;</button>
         </div>
         <div class="modal-body">
-            <h3>1. Fundamentos e Conceitos Modernos de Vendas</h3>
-            <p>Vender deixou de ser empurrar produtos e passou a ser um processo de consultoria, solução de problemas e construção de relacionamentos de longo prazo. O foco central é entregar valor real ao cliente e entender suas necessidades profundas.</p>
-            <ul>
-                <li><strong>Orientação para o Cliente:</strong> Compreender o comportamento do consumidor moderno, que é mais informado e exigente.</li>
-                <li><strong>Papel do Vendedor Consultivo:</strong> Atuar como um facilitador de compras e um especialista capaz de orientar a melhor decisão.</li>
-            </ul>
+            
+            <!-- Lição 1 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">1º Lição: Vendas x Marketing <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Enquanto o marketing foca na estratégia macro de mercado, atração, posicionamento de marca e criação de demanda, as vendas tratam do relacionamento direto, conversão e fechamento de transações com o cliente final.</p>
+                </div>
+            </div>
 
-            <h3>2. Etapas do Processo de Vendas</h3>
-            <p>O ciclo comercial estruturado garante maior previsibilidade de fechamento e eficiência no atendimento:</p>
-            <ul>
-                <li><strong>Prospecção:</strong> Identificação e qualificação de potenciais clientes (leads) que possuem fit com o produto ou serviço.</li>
-                <li><strong>Pré-abordagem e Investigação:</strong> Levantamento de informações prévias e aplicação de perguntas inteligentes para descobrir dores e necessidades.</li>
-                <li><strong>Apresentação e Demonstração da Solução:</strong> Conectar os benefícios do produto diretamente aos problemas específicos do cliente.</li>
-                <li><strong>Contorno de Objeções:</strong> Encarar dúvidas e resistências (preço, prazo, utilidade) como oportunidades de esclarecimento e reforço de valor.</li>
-                <li><strong>Fechamento:</strong> Condução assertiva para a finalização do negócio através de técnicas como fechamento presumido ou alternativas direcionadas.</li>
-                <li><strong>Pós-venda e Fidelização:</strong> Garantir a satisfação após a compra para estimular a recompra e o marketing boca a boca (indicações).</li>
-            </ul>
+            <!-- Lição 2 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">2º Lição: Administração de Vendas <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Envolve o planejamento, direção e controle dos recursos e equipes comerciais, garantindo o alinhamento das metas da empresa com os resultados práticos de campo.</p>
+                </div>
+            </div>
 
-            <h3>3. Técnicas de Comunicação e Abordagem</h3>
-            <p>A comunicação eficaz é a ferramenta principal de conversão no comércio e prestação de serviços:</p>
-            <ul>
-                <li><strong>Escuta Ativa:</strong> Ouvir genuinamente o cliente para entender suas entrelinhas em vez de apenas aguardar a sua vez de falar.</li>
-                <li><strong>Rapport:</strong> Criação rápida de empatia, sintonia e conexão de confiança com o interlocutor.</li>
-                <li><strong>Gatilhos Mentais:</strong> Uso ético de princípios de psicologia de consumo, como escassez, urgência, autoridade e prova social.</li>
-            </ul>
+            <!-- Lição 3 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">3º Lição: Gerência de Vendas <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Papel focado na liderança operacional da equipe, acompanhamento de indicadores de desempenho (KPIs), motivação diária e suporte direto no fechamento de grandes negócios.</p>
+                </div>
+            </div>
 
-            <h3>4. Negociação e Gestão de Conflitos</h3>
-            <p>Toda negociação de sucesso busca o modelo ganha-ganha (win-win), onde ambas as partes percebem vantagem na transação:</p>
-            <ul>
-                <li><strong>Negociação Baseada em Valor vs. Preço:</strong> Quando o cliente argumenta que o preço está alto, o vendedor deve realçar os diferenciais competitivos, qualidade, economia a longo prazo e suporte oferecido.</li>
-                <li><strong>Flexibilidade e Concessões:</strong> Nunca conceder descontos sem pedir algo em troca (ex: aumento no volume de compra ou fechamento imediato).</li>
-            </ul>
+            <!-- Lição 4 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">4º Lição: Estilos de Liderança <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Estudo dos perfis de liderança (autocrática, democrática e liberal/delegativa) e como aplicá-los de acordo com a maturidade da equipe comercial.</p>
+                </div>
+            </div>
+
+            <!-- Lição 5 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">5º Lição: Planejamento de Vendas <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Estruturação de metas de curto, médio e longo prazo, previsão de faturamento e definição de estratégias para alcançar o público-alvo com eficiência.</p>
+                </div>
+            </div>
+
+            <!-- Lição 6 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">6º Lição: Potencial de Mercado <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Metodologias para mensurar o tamanho máximo que um produto ou serviço pode alcançar em determinado setor ou região geográfica.</p>
+                </div>
+            </div>
+
+            <!-- Lição 7 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">7º Lição: Territórios <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Divisão geográfica ou por nichos de atuação atribuída aos vendedores, evitando sobreposição de esforços e otimizando a cobertura de atendimento.</p>
+                </div>
+            </div>
+
+            <!-- Lição 8 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">8º Lição: Rotas <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Planejamento logístico dos trajetos de visitas comerciais para equipes externas, minimizando custos de deslocamento e maximizando o número de clientes atendidos.</p>
+                </div>
+            </div>
+
+            <!-- Lição 9 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">9º Lição: Orçamento de Vendas <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Previsão financeira de receitas esperadas e controle detalhado dos custos operacionais necessários para manter a estrutura comercial funcionando.</p>
+                </div>
+            </div>
+
+            <!-- Lição 10 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">10º Lição: Segmentação de Mercado <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Processo de dividir o mercado total em grupos menores com características semelhantes, permitindo abordagens comerciais mais assertivas e personalizadas.</p>
+                </div>
+            </div>
+
+            <!-- Lição 11 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">11º Lição: Distribuição e Logística <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Análise dos canais pelos quais os produtos saem da fábrica ou distribuidor até chegar ao consumidor final, garantindo prazos e integridade.</p>
+                </div>
+            </div>
+
+            <!-- Lição 12 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">12º Lição: Logística <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Gestão de armazéns, estoque, manuseio e transporte, fatores cruciais que impactam diretamente na satisfação do cliente no pós-venda.</p>
+                </div>
+            </div>
+
+            <!-- Lição 13 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">13º Lição: Varejo <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Estratégias de vendas diretas ao consumidor final, com foco em ponto de venda (PDV), experiência do cliente, layout e atendimento de alto fluxo.</p>
+                </div>
+            </div>
+
+            <!-- Lição 14 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">14º Lição: Atacado <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Comércio voltado para a venda em grandes volumes para revendedores, empresas ou transformadores, focando em margens de ganho por escala.</p>
+                </div>
+            </div>
+
+            <!-- Lição 15 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">15º Lição: Recrutamento e Seleção de Vendedores <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Técnicas para identificar candidatos com perfil comportamental adequado para a área comercial, resiliência, empatia e foco em resultados.</p>
+                </div>
+            </div>
+
+            <!-- Lição 16 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">16º Lição: Treinamento de Vendas <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Capacitação contínua da equipe sobre o portfólio de produtos, técnicas de argumentação e simulações práticas de cenários reais de atendimento.</p>
+                </div>
+            </div>
+
+            <!-- Lição 17 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">17º Lição: Métodos de Treinamento <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Aplicação de metodologias ativas, como role-playing (simulação de papéis), e-learning e mentorias individuais para aprimoramento de habilidades.</p>
+                </div>
+            </div>
+
+            <!-- Lição 18 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">18º Lição: Motivação da Força de Vendas <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Estratégias de remuneração variável, planos de incentivo, comissões atrativas e reconhecimento público para manter o ânimo e o engajamento da equipe.</p>
+                </div>
+            </div>
+
+            <!-- Lição 19 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">19º Lição: Avaliação de Desempenho e Plano de Carreira <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Ferramentas de mensuração de resultados individuais e estabelecimento de diretrizes claras para progressão e crescimento profissional dentro da empresa.</p>
+                </div>
+            </div>
+
+            <!-- Lição 20 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">20º Lição: Técnicas de Vendas <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Conjunto de abordagens práticas para conduzir o cliente através do funil de vendas, superando barreiras e gerando valor agregado.</p>
+                </div>
+            </div>
+
+            <!-- Lição 21 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">21º Lição: Tipos de Abordagens de Vendas <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Diferenciação entre abordagens consultivas, transacionais, SPIN Selling (Situação, Problema, Implicação e Necessidade) e venda centrada no cliente.</p>
+                </div>
+            </div>
+
+            <!-- Lição 22 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">22º Lição: Controle, Análise e Avaliação de Vendas <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Monitoramento contínuo de métricas como taxa de conversão, ticket médio, custo de aquisição e ciclo de vendas para correção rápida de rumos.</p>
+                </div>
+            </div>
+
+            <!-- Lição 23 -->
+            <div class="licao-item">
+                <button class="licao-titulo" onclick="toggleLicao(this)">23º Lição: Bibliografia/Links Recomendados <span>▼</span></button>
+                <div class="licao-conteudo">
+                    <p>Indicações de leituras complementares, livros clássicos de gestão e vendas, e portais de atualização profissional para aprofundamento contínuo.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
@@ -244,6 +441,17 @@ function abrirModal() {
 
 function fecharModal() {
     document.getElementById('modalEstudo').style.display = 'none';
+}
+
+function toggleLicao(button) {
+    var conteudo = button.nextElementSibling;
+    if (conteudo.style.display === "block") {
+        conteudo.style.display = "none";
+        button.querySelector("span").textContent = "▼";
+    } else {
+        conteudo.style.display = "block";
+        button.querySelector("span").textContent = "▲";
+    }
 }
 
 // Fecha a modal ao clicar fora da caixa de conteúdo
