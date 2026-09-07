@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Cursos - Curso de Vendas</title>
+    <title>Prime Cursos - Administração de Vendas</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,7 +42,6 @@
             font-size: 1.1em;
             font-weight: 500;
         }
-        /* Estilo do Vídeo Institucional */
         .video-container {
             position: relative;
             width: 100%;
@@ -112,7 +111,7 @@
             color: #0056b3;
         }
 
-        /* Estilos da Modal e Lições */
+        /* Estilos da Modal e Lições detalhadas */
         .modal {
             display: none;
             position: fixed;
@@ -130,7 +129,7 @@
         .modal-content {
             background-color: #fff;
             width: 100%;
-            max-width: 650px;
+            max-width: 700px;
             max-height: 85vh;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -162,17 +161,15 @@
             padding: 25px;
             overflow-y: auto;
             text-align: left;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333;
         }
-        /* Lista de Lições em estilo de botões accordions/linhas */
         .licao-item {
             background: #f8f9fa;
             border: 1px solid #e9ecef;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             border-radius: 8px;
             overflow: hidden;
-            transition: all 0.2s ease;
         }
         .licao-titulo {
             width: 100%;
@@ -194,15 +191,27 @@
         }
         .licao-conteudo {
             display: none;
-            padding: 0 20px 20px 20px;
-            color: #4a5568;
-            font-size: 0.95em;
+            padding: 20px;
+            color: #2d3748;
+            font-size: 0.96em;
             border-top: 1px solid #e9ecef;
             background: #fff;
         }
-        .licao-conteudo p {
+        .licao-conteudo h4 {
+            color: #0056b3;
             margin-top: 15px;
-            margin-bottom: 0;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        .licao-conteudo h4:first-child {
+            margin-top: 0;
+        }
+        .licao-conteudo p, .licao-conteudo li {
+            margin-bottom: 10px;
+        }
+        .licao-conteudo ul {
+            padding-left: 20px;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -211,12 +220,12 @@
 <div class="container">
     <div class="header-content">
         <h1>Prime Cursos</h1>
-        <div class="subtitulo">Capacitação Online - Curso de Vendas</div>
+        <div class="subtitulo">Capacitação Online - Administração de Vendas</div>
     </div>
 
     <!-- Vídeo Institucional incorporado -->
     <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/V4N_94I4cjY" title="Apresentação do Curso de Vendas" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/V4N_94I4cjY" title="Apresentação do Curso" allowfullscreen></iframe>
     </div>
 
     <div class="link-box">
@@ -237,11 +246,11 @@
     </div>
 </div>
 
-<!-- Modal com as 23 Lições do Curso -->
+<!-- Modal com o Conteúdo Completo das 23 Lições -->
 <div id="modalEstudo" class="modal">
     <div class="modal-content">
         <div class="modal-header">
-            <h2>Conteúdo Programático - Curso de Vendas</h2>
+            <h2>Material Completo de Estudo - Administração de Vendas</h2>
             <button class="close-btn" onclick="fecharModal()">&times;</button>
         </div>
         <div class="modal-body">
@@ -250,7 +259,12 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">1º Lição: Vendas x Marketing <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Enquanto o marketing foca na estratégia macro de mercado, atração, posicionamento de marca e criação de demanda, as vendas tratam do relacionamento direto, conversão e fechamento de transações com o cliente final.</p>
+                    <h4>Compreendendo as Fronteiras</h4>
+                    <p>Embora frequentemente confundidos ou colocados sob o mesmo guarda-chuva corporativo, Vendas e Marketing possuem propósitos, prazos e ferramentas distintos que se complementam para gerar receita.</p>
+                    <h4>O Papel do Marketing</h4>
+                    <p>Atua na perspectiva macro do negócio. É responsável por estudar o mercado, definir o posicionamento da marca, criar desejos, estruturar campanhas de atração de massa e gerar leads qualificados através de estratégias de longo prazo.</p>
+                    <h4>O Papel de Vendas</h4>
+                    <p>Foca no micro, na relação direta e humana. Vendas tratam da conversão individual, da negociação personalizada, do entendimento das objeções pontuais e do fechamento transacional.</p>
                 </div>
             </div>
 
@@ -258,7 +272,14 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">2º Lição: Administração de Vendas <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Envolve o planejamento, direção e controle dos recursos e equipes comerciais, garantindo o alinhamento das metas da empresa com os resultados práticos de campo.</p>
+                    <h4>Conceito e Escopo</h4>
+                    <p>A administração de vendas abrange a gestão estratégica de todo o departamento comercial de uma organização. Envolve a coordenação de pessoas, processos, canais de distribuição e políticas de preços.</p>
+                    <h4>Pilares de Sustentação</h4>
+                    <ul>
+                        <li><strong>Planejamento Estratégico:</strong> Definição de metas comerciais compatíveis com a capacidade de entrega da empresa.</li>
+                        <li><strong>Organização Estrutural:</strong> Alocação correta de vendedores por regiões, linhas de produtos ou perfis de clientes.</li>
+                        <li><strong>Controle de Resultados:</strong> Monitoramento contínuo de indicadores de desempenho comercial (KPIs).</li>
+                    </ul>
                 </div>
             </div>
 
@@ -266,7 +287,14 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">3º Lição: Gerência de Vendas <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Papel focado na liderança operacional da equipe, acompanhamento de indicadores de desempenho (KPIs), motivação diária e suporte direto no fechamento de grandes negócios.</p>
+                    <h4>Atuação do Gerente</h4>
+                    <p>O gerente de vendas atua na linha de frente entre a alta diretoria e a equipe de campo. Sua responsabilidade central é garantir que a estratégia planejada seja executada com excelência operacional no dia a dia.</p>
+                    <h4>Atividades Diárias</h4>
+                    <ul>
+                        <li>Condução de reuniões matinais de alinhamento e motivação.</li>
+                        <li>Acompanhamento de negociações complexas (suporte de fechamento).</li>
+                        <li>Análise de relatórios de produtividade individual da equipe.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -274,7 +302,14 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">4º Lição: Estilos de Liderança <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Estudo dos perfis de liderança (autocrática, democrática e liberal/delegativa) e como aplicá-los de acordo com a maturidade da equipe comercial.</p>
+                    <h4>Liderança no Ambiente Comercial</h4>
+                    <p>Vendedores lidam diariamente com pressões e oscilações emocionais inerentes às metas. O líder comercial deve adaptar seu estilo de gestão conforme o nível de maturidade e autonomia de cada colaborador.</p>
+                    <h4>Principais Estilos</h4>
+                    <ul>
+                        <li><strong>Autocrático:</strong> Centralizador, ideal para equipes inexperientes que necessitam de processos rígidos.</li>
+                        <li><strong>Democrático:</strong> Participativo, escuta a equipe para tomada de decisões coletivas.</li>
+                        <li><strong>Liberal (Delegativo):</strong> Focado em metas finais, conferindo total autonomia aos profissionais seniores de alta performance.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -282,7 +317,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">5º Lição: Planejamento de Vendas <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Estruturação de metas de curto, médio e longo prazo, previsão de faturamento e definição de estratégias para alcançar o público-alvo com eficiência.</p>
+                    <h4>Estruturando o Futuro Comercial</h4>
+                    <p>Planejar vendas consiste em antecipar cenários de mercado, definir orçamentos, estabelecer quotas de vendas justas e viáveis, e mapear os recursos necessários para o sucesso operacional.</p>
+                    <h4>Etapas do Planejamento</h4>
+                    <p>Análise do histórico de vendas anterior, estudo da conjuntura econômica vigente, definição de metas de crescimento de market share e estabelecimento de planos de contingência para crises.</p>
                 </div>
             </div>
 
@@ -290,7 +328,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">6º Lição: Potencial de Mercado <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Metodologias para mensurar o tamanho máximo que um produto ou serviço pode alcançar em determinado setor ou região geográfica.</p>
+                    <h4>Mensurando Oportunidades</h4>
+                    <p>O potencial de mercado representa o volume total máximo de vendas que todas as empresas de um setor podem gerar em um período específico sob condições ótimas.</p>
+                    <h4>Utilidade Prática</h4>
+                    <p>Ajuda os gestores a entenderem se há espaço real para expansão de novos produtos, se o mercado está saturado e qual fatia real (market share) a empresa detém atualmente.</p>
                 </div>
             </div>
 
@@ -298,7 +339,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">7º Lição: Territórios <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Divisão geográfica ou por nichos de atuação atribuída aos vendedores, evitando sobreposição de esforços e otimizando a cobertura de atendimento.</p>
+                    <h4>Organização Geográfica e por Contas</h4>
+                    <p>A divisão de territórios define claramente qual área geográfica, carteira ou tipo de cliente cada vendedor ou equipe é responsável por atender.</p>
+                    <h4>Vantagens da Territorialização</h4>
+                    <p>Evita a concorrência interna entre vendedores da mesma empresa, reduz custos com deslocamentos excessivos e assegura uma cobertura homogênea e eficiente do mercado-alvo.</p>
                 </div>
             </div>
 
@@ -306,7 +350,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">8º Lição: Rotas <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Planejamento logístico dos trajetos de visitas comerciais para equipes externas, minimizando custos de deslocamento e maximizando o número de clientes atendidos.</p>
+                    <h4>Otimização de Deslocamentos</h4>
+                    <p>Para equipes de vendas externas e atendimento porta a porta, o desenho de rotas racionais é indispensável para cortar custos operacionais com combustível, tempo e desgaste de equipe.</p>
+                    <h4>Critérios de Elaboração</h4>
+                    <p>Concentração de clientes por zonas em dias específicos da semana, priorização de clientes com maior volume de compras recorrentes e flexibilidade para chamados de urgência.</p>
                 </div>
             </div>
 
@@ -314,7 +361,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">9º Lição: Orçamento de Vendas <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Previsão financeira de receitas esperadas e controle detalhado dos custos operacionais necessários para manter a estrutura comercial funcionando.</p>
+                    <h4>Previsão Financeira e Custos</h4>
+                    <p>O orçamento de vendas (sales budget) expressa em valores monetários as expectativas de receita comercial e os gastos necessários para atingir tais metas (comissões, viagens, infraestrutura).</p>
+                    <h4>Controle Orçamentário</h4>
+                    <p>Permite comparar periodicamente o realizado versus o orçado, facilitando correções financeiras rápidas caso os custos operacionais superem as margens de lucro obtidas.</p>
                 </div>
             </div>
 
@@ -322,7 +372,14 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">10º Lição: Segmentação de Mercado <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Processo de dividir o mercado total em grupos menores com características semelhantes, permitindo abordagens comerciais mais assertivas e personalizadas.</p>
+                    <h4>Dividir para Atender Melhor</h4>
+                    <p>Segmentar é o processo de agrupar consumidores em subconjuntos homogêneos com base em necessidades, comportamentos, poder aquisitivo ou características demográficas semelhantes.</p>
+                    <h4>Critérios de Segmentação</h4>
+                    <ul>
+                        <li><strong>Geográfico:</strong> Países, estados, cidades ou bairros.</li>
+                        <li><strong>Demográfico:</strong> Idade, gênero, renda, escolaridade.</li>
+                        <li><strong>Comportamental:</strong> Hábitos de consumo, fidelidade à marca e benefícios procurados.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -330,7 +387,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">11º Lição: Distribuição e Logística <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Análise dos canais pelos quais os produtos saem da fábrica ou distribuidor até chegar ao consumidor final, garantindo prazos e integridade.</p>
+                    <h4>Canais de Escoamento</h4>
+                    <p>Refere-se ao caminho físico e estrutural que o produto percorre desde a linha de produção até o consumidor final, englobando intermediários como atacadistas, distribuidores e varejistas.</p>
+                    <h4>Importância Estratégica</h4>
+                    <p>Uma boa escolha de canais de distribuição garante que o produto esteja disponível no lugar certo, na quantidade certa e no momento exato em que o cliente deseja comprar.</p>
                 </div>
             </div>
 
@@ -338,7 +398,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">12º Lição: Logística <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Gestão de armazéns, estoque, manuseio e transporte, fatores cruciais que impactam diretamente na satisfação do cliente no pós-venda.</p>
+                    <h4>Gestão de Armazenagem e Entrega</h4>
+                    <p>A logística comercial foca na administração eficiente de estoques, manuseio de mercadorias, prazos de entrega e transporte, impactando diretamente o índice de satisfação do cliente.</p>
+                    <h4>O Fator Pós-Venda</h4>
+                    <p>Um excelente atendimento comercial pode ser arruinado por falhas logísticas graves, como atrasos crônicos na entrega ou produtos avariados no transporte.</p>
                 </div>
             </div>
 
@@ -346,7 +409,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">13º Lição: Varejo <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Estratégias de vendas diretas ao consumidor final, com foco em ponto de venda (PDV), experiência do cliente, layout e atendimento de alto fluxo.</p>
+                    <h4>Comércio Direto ao Consumidor</h4>
+                    <p>O varejo caracteriza-se pela venda de produtos e serviços em pequenas quantidades diretamente ao consumidor final para uso pessoal ou familiar.</p>
+                    <h4>Fatores Críticos no Varejo</h4>
+                    <p>Exposição correta no ponto de venda (merchandising), atendimento ágil, ambiente agradável, facilidade de pagamento e política clara de trocas e devoluções.</p>
                 </div>
             </div>
 
@@ -354,7 +420,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">14º Lição: Atacado <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Comércio voltado para a venda em grandes volumes para revendedores, empresas ou transformadores, focando em margens de ganho por escala.</p>
+                    <h4>Operações em Grandes Volumes</h4>
+                    <p>O atacado engloba a venda de mercadorias para revendedores, empresas, indústrias ou instituições, operando tipicamente com grandes volumes e margens unitárias menores.</p>
+                    <h4>Diferenciais do Atacado</h4>
+                    <p>Foco na solidez financeira do cliente corporativo (análise de crédito rigorosa), negociações contratuais de longo prazo e fornecimento contínuo e escalável.</p>
                 </div>
             </div>
 
@@ -362,7 +431,14 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">15º Lição: Recrutamento e Seleção de Vendedores <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Técnicas para identificar candidatos com perfil comportamental adequado para a área comercial, resiliência, empatia e foco em resultados.</p>
+                    <h4>Formando a Equipe Campeã</h4>
+                    <p>O processo seletivo para a área comercial deve ir além do currículo técnico, priorizando competências comportamentais essenciais para a profissão.</p>
+                    <h4>Competências Avaliadas</h4>
+                    <ul>
+                        <li><strong>Resiliência:</strong> Capacidade de lidar com rejeições frequentes sem perda de motivação.</li>
+                        <li><strong>Empatia:</strong> Facilidade genuína em ouvir e compreender as dores do cliente.</li>
+                        <li><strong>Orientação para Resultados:</strong> Foco constante no cumprimento de metas e indicadores.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -370,7 +446,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">16º Lição: Treinamento de Vendas <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Capacitação contínua da equipe sobre o portfólio de produtos, técnicas de argumentação e simulações práticas de cenários reais de atendimento.</p>
+                    <h4>Capacitação Contínua</h4>
+                    <p>O treinamento não deve ocorrer apenas na integração inicial do funcionário, mas ser um processo contínuo de reciclagem técnica, atualização de portfólio e aprimoramento de técnicas de negociação.</p>
+                    <h4>Áreas de Foco</h4>
+                    <p>Domínio profundo das especificações técnicas dos produtos, estudo detalhado dos diferenciais competitivos frente aos concorrentes de mercado e simulações de atendimento.</p>
                 </div>
             </div>
 
@@ -378,7 +457,14 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">17º Lição: Métodos de Treinamento <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Aplicação de metodologias ativas, como role-playing (simulação de papéis), e-learning e mentorias individuais para aprimoramento de habilidades.</p>
+                    <h4>Ferramentas de Aprendizagem</h4>
+                    <p>Utilização de metodologias modernas e interativas para fixação de conceitos práticos de vendas no cotidiano da equipe.</p>
+                    <h4>Técnicas Comuns</h4>
+                    <ul>
+                        <li><strong>Role-Playing:</strong> Simulação realista de papéis entre vendedor e cliente simulado para treino de contorno de objeções.</li>
+                        <li><strong>Mentoria:</strong> Acompanhamento direto de vendedores novatos junto a profissionais seniores de alta performance.</li>
+                        <li><strong>E-learning:</strong> Plataformas digitais de estudo autônomo.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -386,7 +472,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">18º Lição: Motivação da Força de Vendas <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Estratégias de remuneração variável, planos de incentivo, comissões atrativas e reconhecimento público para manter o ânimo e o engajamento da equipe.</p>
+                    <h4>Mantendo o Gás Comercial</h4>
+                    <p>A motivação da equipe está diretamente ligada a políticas justas de remuneração variável, comissões agressivas, premiações por metas alcançadas e reconhecimento público.</p>
+                    <h4>Fatores Intrínsecos e Extrínsecos</h4>
+                    <p>Além do ganho financeiro (extrínseco), os vendedores precisam de planos de carreira claros, autonomia saudável e um ambiente de trabalho que valorize o esforço diário.</p>
                 </div>
             </div>
 
@@ -394,7 +483,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">19º Lição: Avaliação de Desempenho e Plano de Carreira <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Ferramentas de mensuração de resultados individuais e estabelecimento de diretrizes claras para progressão e crescimento profissional dentro da empresa.</p>
+                    <h4>Mensurando o Valor Entregue</h4>
+                    <p>Avaliações periódicas de desempenho permitem identificar gargalos individuais de produtividade e alinhar expectativas entre gerência e vendedor.</p>
+                    <h4>Plano de Carreira</h4>
+                    <p>Estrutura transparente que demonstra ao profissional os requisitos necessários (tempo de casa, atingimento de metas, liderança) para progredir horizontal ou verticalmente na organização.</p>
                 </div>
             </div>
 
@@ -402,7 +494,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">20º Lição: Técnicas de Vendas <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Conjunto de abordagens práticas para conduzir o cliente através do funil de vendas, superando barreiras e gerando valor agregado.</p>
+                    <h4>Arsenal Prático de Conversão</h4>
+                    <p>Conjunto estruturado de táticas utilizadas pelo vendedor para conduzir o cliente potencial através das etapas do funil comercial até a decisão de compra.</p>
+                    <h4>Elementos Chave</h4>
+                    <p>Domínio da escuta ativa, construção de rapport (conexão empática imediata), uso ético de gatilhos mentais de escassez e urgência, e técnicas assertivas de fechamento.</p>
                 </div>
             </div>
 
@@ -410,7 +505,14 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">21º Lição: Tipos de Abordagens de Vendas <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Diferenciação entre abordagens consultivas, transacionais, SPIN Selling (Situação, Problema, Implicação e Necessidade) e venda centrada no cliente.</p>
+                    <h4>Modelos de Interação Comercial</h4>
+                    <p>Diferentes mercados exigem filosofias distintas de abordagem para alcançar sucesso na conversão.</p>
+                    <h4>Principais Metodologias</h4>
+                    <ul>
+                        <li><strong>Venda Transacional:</strong> Rápida, focada em volume e preço para produtos de consumo imediato.</li>
+                        <li><strong>Venda Consultiva:</strong> Focada em entender o problema complexo do cliente para oferecer soluções sob medida.</li>
+                        <li><strong>SPIN Selling:</strong> Metodologia baseada em perguntas de Situação, Problema, Implicação e Necessidade de solução.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -418,7 +520,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">22º Lição: Controle, Análise e Avaliação de Vendas <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Monitoramento contínuo de métricas como taxa de conversão, ticket médio, custo de aquisição e ciclo de vendas para correção rápida de rumos.</p>
+                    <h4>Gestão Baseada em Dados</h4>
+                    <p>Monitoramento rigoroso de indicadores vitais para o negócio comercial, como taxa de conversão de leads, ticket médio, custo de aquisição de clientes (CAC) e ciclo de vendas.</p>
+                    <h4>Correção de Rotas</h4>
+                    <p>Permite à gestão identificar quedas de desempenho em tempo hábil, ajustando estratégias de campanha ou reforçando treinamentos específicos antes que afetem o faturamento global.</p>
                 </div>
             </div>
 
@@ -426,7 +531,10 @@
             <div class="licao-item">
                 <button class="licao-titulo" onclick="toggleLicao(this)">23º Lição: Bibliografia/Links Recomendados <span>▼</span></button>
                 <div class="licao-conteudo">
-                    <p>Indicações de leituras complementares, livros clássicos de gestão e vendas, e portais de atualização profissional para aprofundamento contínuo.</p>
+                    <h4>Fontes de Aprofundamento</h4>
+                    <p>Indicação de leituras clássicas, manuais acadêmicos de administração mercadológica e portais especializados para continuidade dos estudos na área comercial.</p>
+                    <h4>Conteúdos Sugeridos</h4>
+                    <p>Livros fundamentais sobre gestão de forças de vendas, artigos de Harvard Business Review sobre liderança comercial e estudos de caso de empresas de grande porte.</p>
                 </div>
             </div>
 
