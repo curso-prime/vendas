@@ -17,14 +17,18 @@
             justify-content: center;
         }
         .container {
-            max-width: 500px;
+            max-width: 600px;
             width: 100%;
             background: #ffffff;
-            padding: 50px 40px;
+            padding: 40px 30px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            text-align: center;
             box-sizing: border-box;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .header-content {
+            text-align: center;
         }
         h1 {
             color: #0056b3;
@@ -34,19 +38,19 @@
         }
         .subtitulo {
             color: #6c757d;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-size: 1.1em;
             font-weight: 500;
         }
         .link-box {
-            margin: 20px 0;
+            margin: 15px 0;
         }
         .btn-link {
             display: block;
             background-color: #0056b3;
             color: #ffffff;
             text-decoration: none;
-            padding: 18px 25px;
+            padding: 16px 25px;
             font-size: 1.1em;
             border-radius: 8px;
             font-weight: 600;
@@ -57,10 +61,11 @@
             width: 100%;
             box-sizing: border-box;
             font-family: inherit;
+            text-align: center;
         }
         .btn-link:hover {
             background-color: #004494;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0, 86, 179, 0.3);
         }
         .btn-prova {
@@ -69,7 +74,6 @@
         }
         .btn-prova:hover {
             background-color: #218838;
-            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
         }
         .btn-voltar {
             background-color: #6c757d;
@@ -77,31 +81,106 @@
         }
         .btn-voltar:hover {
             background-color: #5a6268;
-            box-shadow: 0 6px 15px rgba(108, 117, 125, 0.3);
         }
         .texto-suporte {
-            margin-top: 35px;
+            margin-top: 30px;
             color: #555;
             font-size: 0.95em;
             line-height: 1.6;
+            text-align: center;
         }
         .texto-suporte strong {
             color: #0056b3;
+        }
+
+        /* Estilos da Modal de Conteúdo de Estudo */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background-color: #fff;
+            width: 100%;
+            max-width: 700px;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .modal-header {
+            padding: 20px 25px;
+            background-color: #0056b3;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.4em;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8em;
+            cursor: pointer;
+        }
+        .modal-body {
+            padding: 25px;
+            overflow-y: auto;
+            text-align: left;
+            line-height: 1.6;
+            color: #333;
+        }
+        .modal-body h3 {
+            color: #0056b3;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 5px;
+        }
+        .modal-body h3:first-child {
+            margin-top: 0;
+        }
+        .modal-body p, .modal-body li {
+            font-size: 0.98em;
+            margin-bottom: 10px;
+        }
+        .modal-body ul {
+            padding-left: 20px;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Prime Cursos</h1>
-    <div class="subtitulo">Capacitação Online - Curso de Vendas</div>
-
-    <div class="link-box">
-        <a href="https://b2storage.primecursos.com.br/file/filespdf/Curso-de-Vendas.pdf" class="btn-link" target="_blank">Material para estudo do curso</a>
+    <div class="header-content">
+        <h1>Prime Cursos</h1>
+        <div class="subtitulo">Capacitação Online - Curso de Vendas</div>
     </div>
 
     <div class="link-box">
-        <a href="https://curso-prime.github.io/curso-vendas/" class="btn-link btn-prova" target="_blank">Realizar a prova</a>
+        <button type="button" class="btn-link" onclick="abrirModal()">Material para estudo do curso</button>
+    </div>
+
+    <div class="link-box">
+        <a href="https://curso-prime.github.io/prova-vendas/" class="btn-link btn-prova" target="_blank">Realizar a prova</a>
     </div>
 
     <div class="link-box">
@@ -114,7 +193,67 @@
     </div>
 </div>
 
+<!-- Modal com o Material de Estudo Organizado por Tópicos -->
+<div id="modalEstudo" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Material de Estudo - Curso de Vendas</h2>
+            <button class="close-btn" onclick="fecharModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h3>1. Fundamentos e Conceitos Modernos de Vendas</h3>
+            <p>Vender deixou de ser empurrar produtos e passou a ser um processo de consultoria, solução de problemas e construção de relacionamentos de longo prazo. O foco central é entregar valor real ao cliente e entender suas necessidades profundas.</p>
+            <ul>
+                <li><strong>Orientação para o Cliente:</strong> Compreender o comportamento do consumidor moderno, que é mais informado e exigente.</li>
+                <li><strong>Papel do Vendedor Consultivo:</strong> Atuar como um facilitador de compras e um especialista capaz de orientar a melhor decisão.</li>
+            </ul>
+
+            <h3>2. Etapas do Processo de Vendas</h3>
+            <p>O ciclo comercial estruturado garante maior previsibilidade de fechamento e eficiência no atendimento:</p>
+            <ul>
+                <li><strong>Prospecção:</strong> Identificação e qualificação de potenciais clientes (leads) que possuem fit com o produto ou serviço.</li>
+                <li><strong>Pré-abordagem e Investigação:</strong> Levantamento de informações prévias e aplicação de perguntas inteligentes para descobrir dores e necessidades.</li>
+                <li><strong>Apresentação e Demonstração da Solução:</strong> Conectar os benefícios do produto diretamente aos problemas específicos do cliente.</li>
+                <li><strong>Contorno de Objeções:</strong> Encarar dúvidas e resistências (preço, prazo, utilidade) como oportunidades de esclarecimento e reforço de valor.</li>
+                <li><strong>Fechamento:</strong> Condução assertiva para a finalização do negócio através de técnicas como fechamento presumido ou alternativas direcionadas.</li>
+                <li><strong>Pós-venda e Fidelização:</strong> Garantir a satisfação após a compra para estimular a recompra e o marketing boca a boca (indicações).</li>
+            </ul>
+
+            <h3>3. Técnicas de Comunicação e Abordagem</h3>
+            <p>A comunicação eficaz é a ferramenta principal de conversão no comércio e prestação de serviços:</p>
+            <ul>
+                <li><strong>Escuta Ativa:</strong> Ouvir genuinamente o cliente para entender suas entrelinhas em vez de apenas aguardar a sua vez de falar.</li>
+                <li><strong>Rapport:</strong> Criação rápida de empatia, sintonia e conexão de confiança com o interlocutor.</li>
+                <li><strong>Gatilhos Mentais:</strong> Uso ético de princípios de psicologia de consumo, como escassez, urgência, autoridade e prova social.</li>
+            </ul>
+
+            <h3>4. Negociação e Gestão de Conflitos</h3>
+            <p>Toda negociação de sucesso busca o modelo ganha-ganha (win-win), onde ambas as partes percebem vantagem na transação:</p>
+            <ul>
+                <li><strong>Negociação Baseada em Valor vs. Preço:</strong> Quando o cliente argumenta que o preço está alto, o vendedor deve realçar os diferenciais competitivos, qualidade, economia a longo prazo e suporte oferecido.</li>
+                <li><strong>Flexibilidade e Concessões:</strong> Nunca conceder descontos sem pedir algo em troca (ex: aumento no volume de compra ou fechamento imediato).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
+function abrirModal() {
+    document.getElementById('modalEstudo').style.display = 'flex';
+}
+
+function fecharModal() {
+    document.getElementById('modalEstudo').style.display = 'none';
+}
+
+// Fecha a modal ao clicar fora da caixa de conteúdo
+window.onclick = function(event) {
+    var modal = document.getElementById('modalEstudo');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
